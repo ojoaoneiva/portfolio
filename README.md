@@ -21,8 +21,8 @@ https://joaoneiva.surge.sh/
 
 ## Images:
 <p align="center">
-  <img src="./F4LIFE/imagens e icones/mobile.jpg" alt="project print screen" width="600">  
-  <img src="./F4LIFE/imagens e icones/1.jpg" alt="project print screen" width="600">  
-  <img src="./F4LIFE/imagens e icones/2.jpg" alt="project print screen" width="600">  
-  <img src="./F4LIFE/imagens e icones/3.jpg" alt="project print screen" width="600">  
+  <img src="assets/1.JPG" alt="project print screen" width="600">  
+  <img src="assets/2.JPG" alt="project print screen" width="600">  
+  <img src="assets/3.JPG" alt="project print screen" width="600">  
+  <img src="assets/4.JPG" alt="project print screen" width="600">  
 </p>

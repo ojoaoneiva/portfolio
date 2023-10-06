@@ -112,19 +112,19 @@ main
             .album:active .album-images
                 cursor: grabbing
 
-                .album-images:active
-                cursor: grabbing
             button
-                background-color: 858585
+                background-color: variables.$color-text
                 padding: 15px
                 border-radius: 10px
                 border: none
                 position: relative
-                left: 80vw
+                left: 75vw
                 top: 80px
                 @include mixins.mobile
                     left: 65%
                     top: -10vw
+            button:hover
+                background-color: variables.$color-bg
                 a
                     color: variables.$color-bg
                     text-transform: capitalize

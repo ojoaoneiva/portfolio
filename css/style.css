@@ -140,15 +140,14 @@ main li .project-content .album .album-images {
 }
 main li .project-content .album:active .album-images {
   cursor: grabbing;
-  cursor: grabbing;
 }
 main li .project-content button {
-  background-color: 858585;
+  background-color: #858585;
   padding: 15px;
   border-radius: 10px;
   border: none;
   position: relative;
-  left: 80vw;
+  left: 75vw;
   top: 80px;
 }
 @media (max-width: 425px) {

@@ -13,7 +13,7 @@ gsap.ticker.lagSmoothing(0);
 
 // Capture keyboard events for arrow keys
 document.addEventListener('keydown', (e) => {
-  const scrollAmount = 200; // Adjust the scroll amount as needed
+  const scrollAmount = 200;
   let scrollY = window.scrollY;
 
   if (e.key === 'ArrowUp') {
@@ -25,10 +25,7 @@ document.addEventListener('keydown', (e) => {
   lenis.scrollTo(scrollY);
 });
 
-
-
-
-// Capturar eventos de arrasto do mouse para rolagem suave
+// Capture events dragging the mouse
 let isDragging = false;
 let startY = 0;
 
@@ -40,7 +37,7 @@ document.addEventListener('mousedown', (e) => {
 document.addEventListener('mousemove', (e) => {
   if (isDragging) {
     const deltaY = startY - e.clientY;
-    const scrollAmount = 15; // Ajuste a quantidade de rolagem conforme necessário
+    const scrollAmount = 15;
     lenis.scrollTo(window.scrollY + deltaY * scrollAmount);
     startY = e.clientY;
   }
@@ -57,9 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   projectTitles.forEach(function (projectTitle, index) {
     projectTitle.addEventListener("click", function (event) {
-      event.stopPropagation(); // Impede que o evento de clique se propague para o elemento pai
+      event.stopPropagation();
 
-      // Fecha todos os outros projetos
+      // close other projects
       projectContents.forEach(function (content, contentIndex) {
         if (contentIndex !== index) {
           content.style.maxHeight = "0px";
@@ -86,7 +83,7 @@ albumTracks.forEach((track) => {
   let startX;
   let scrollLeftStart;
 
-  // Manipuladores de eventos de mouse
+  // Mouse events
   track.addEventListener('mousedown', (e) => {
     isDragging = true;
     startX = e.clientX;
@@ -104,7 +101,7 @@ albumTracks.forEach((track) => {
     isDragging = false;
   });
 
-  // Manipuladores de eventos de toque
+  // touch events (mobile)
   track.addEventListener('touchstart', (e) => {
     isDragging = true;
     startX = e.touches[0].clientX;
