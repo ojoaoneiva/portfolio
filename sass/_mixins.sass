@@ -6,5 +6,9 @@
   justify-content: center
 
 @mixin mobile
-  @media(max-width: 425px)
+  @media(max-width: 450px)
+    @content
+
+@mixin tablet
+  @media (max-width: 900px) and (min-width: 451px)
     @content

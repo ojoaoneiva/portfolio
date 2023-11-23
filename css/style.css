@@ -29,14 +29,15 @@ ul {
 }
 
 header {
+  visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px 30vw 0 0;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   header {
     flex-direction: column;
     align-items: flex-start;
@@ -50,14 +51,28 @@ header {
 }
 
 main {
-  overflow-x: hidden;
+  overflow: hidden;
+}
+main .title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  left-width: 100%;
+  height: 100%;
+}
+main .title {
+  visibility: hidden;
 }
 main .title h1 {
+  display: flex;
+  justify-content: center;
+  padding: 0;
   margin-top: 45vh;
   font-size: 10.5vw;
   color: #FFF;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   main .title h1 {
     font-size: 15.5vw;
     margin-top: 30vh;
@@ -81,23 +96,34 @@ main #work {
   list-style: none;
   margin: 100px 0px;
 }
+main li .project-title:hover {
+  transform: translateX(20px);
+  color: white;
+}
+@media (max-width: 450px) {
+  main li .project-title:hover {
+    transform: translateX(0);
+  }
+}
 main li .project-title {
   text-transform: uppercase;
   width: 100%;
-  margin: 0 auto;
-  margin: 50px;
-  margin-bottom: 10px;
+  padding: 0 auto;
+  padding: 50px;
+  padding-bottom: 10px;
+  transition: transform 0.5s ease;
+  position: relative;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   main li .project-title {
-    margin-left: 0;
+    margin-left: -30px;
   }
 }
 main li .project-title h2 {
   font-size: 80px;
   text-transform: lowercase;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   main li .project-title h2 {
     font-size: 13vw;
   }
@@ -115,6 +141,7 @@ main li .project-content {
   margin: 0 auto;
   overflow: hidden;
   transition: 1s ease;
+  margin-bottom: 20px;
 }
 main li .project-content .album {
   display: flex;
@@ -123,9 +150,15 @@ main li .project-content .album {
   overflow-x: hidden;
   position: relative;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   main li .project-content .album {
-    height: 30vh;
+    height: 22vh;
+    margin-bottom: 10vw;
+  }
+}
+@media (max-width: 900px) and (min-width: 451px) {
+  main li .project-content .album {
+    height: 36vh;
     margin-bottom: 10vw;
   }
 }
@@ -150,16 +183,21 @@ main li .project-content button {
   left: 75vw;
   top: 80px;
 }
-@media (max-width: 425px) {
-  main li .project-content button {
-    left: 65%;
-    top: -10vw;
-  }
-}
 main li .project-content button a {
   color: #111111;
-  text-transform: capitalize;
-  font-size: 18px;
+  font-size: 16px;
+}
+@media (max-width: 450px) {
+  main li .project-content button {
+    left: 65%;
+    top: -5vw;
+  }
+}
+main li .project-content button:hover {
+  background-color: white;
+}
+main li .project-content button:hover a {
+  color: #111111;
 }
 main li .project-content .technologies ul {
   display: flex;
@@ -168,19 +206,17 @@ main li .project-content .technologies ul {
   gap: 10px;
   margin: 20px 0px;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   main li .project-content .technologies ul {
-    max-width: 80vw;
+    max-width: 90vw;
   }
 }
 main li .project-content .technologies ul li {
-  border-radius: 40px;
+  border-radius: 0;
   font-size: 18px;
-  padding: 15px;
   text-transform: none;
-  border: 1px solid #858585;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   main li .project-content .technologies ul li {
     font-size: 16px;
   }
@@ -192,11 +228,12 @@ main li .line {
   background-color: #858585;
 }
 main #about {
-  width: 50%;
+  width: 40%;
   font-size: 20px;
-  margin-left: 20%;
+  margin-left: 30%;
+  user-select: text;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   main #about {
     width: 80%;
     margin-left: 0;
@@ -206,15 +243,40 @@ main #about {
 footer {
   position: relative;
   bottom: 20px;
-  margin-top: 150px;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 20px;
+  user-select: text;
 }
 footer #email {
+  margin-bottom: 100px;
   user-select: text;
+  font-size: 30px;
+  position: relative;
+  cursor: pointer;
+  user-select: text;
+}
+footer #email:hover {
+  color: white;
+}
+footer .copy-text {
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 10px;
+  opacity: 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
 }
 footer div {
   display: flex;
@@ -229,6 +291,7 @@ footer div a {
   padding: 5px 10px;
   border: 2px solid #858585;
   text-transform: uppercase;
+  user-select: none;
 }
 footer div a:hover {
   background-color: #FFF;
