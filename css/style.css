@@ -11,8 +11,13 @@ body {
   font-size: 24px;
   color: #858585;
   background-color: #111111;
-  overflow-y: hidden;
   user-select: none;
+  overflow-y: hidden;
+}
+@media (max-width: 450px) {
+  body {
+    overflow-y: visible;
+  }
 }
 
 a {
