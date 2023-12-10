@@ -163,18 +163,29 @@ main
                 img
                     width: 40px
                     margin-top: -10px
-            .album
-                display: flex
+            #albumMobile
+                height: 70vh
+                margin-bottom: 5vh
+                @include mixins.mobile
+                    height: 45vh
+                    margin-bottom: 10vw
+                @include mixins.tablet
+                    height: 46vh
+                    margin-bottom: 10vw
+            #album
                 height: 50vh
-                user-select: none
-                overflow-x: hidden
-                position: relative
                 @include mixins.mobile
                     height: 22vh
                     margin-bottom: 10vw
                 @include mixins.tablet
                     height: 36vh
                     margin-bottom: 10vw
+            .album
+                display: flex
+                user-select: none
+                overflow-x: hidden
+                position: relative
+                
                 .album-images
                     display: flex
                     transition: transform 0.3s

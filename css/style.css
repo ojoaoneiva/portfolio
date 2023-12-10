@@ -204,24 +204,42 @@ main li .project-content .arrow img {
   width: 40px;
   margin-top: -10px;
 }
-main li .project-content .album {
-  display: flex;
-  height: 50vh;
-  user-select: none;
-  overflow-x: hidden;
-  position: relative;
+main li .project-content #albumMobile {
+  height: 70vh;
+  margin-bottom: 5vh;
 }
 @media (max-width: 450px) {
-  main li .project-content .album {
+  main li .project-content #albumMobile {
+    height: 45vh;
+    margin-bottom: 10vw;
+  }
+}
+@media (max-width: 900px) and (min-width: 451px) {
+  main li .project-content #albumMobile {
+    height: 46vh;
+    margin-bottom: 10vw;
+  }
+}
+main li .project-content #album {
+  height: 50vh;
+}
+@media (max-width: 450px) {
+  main li .project-content #album {
     height: 22vh;
     margin-bottom: 10vw;
   }
 }
 @media (max-width: 900px) and (min-width: 451px) {
-  main li .project-content .album {
+  main li .project-content #album {
     height: 36vh;
     margin-bottom: 10vw;
   }
+}
+main li .project-content .album {
+  display: flex;
+  user-select: none;
+  overflow-x: hidden;
+  position: relative;
 }
 main li .project-content .album .album-images {
   display: flex;
